@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFSA 2026–2027 Legislative Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --parchment:#F8F6F0;
+    --cream:#EDE6D4;
+    --cream-deep:#E3D9BF;
+    --navy:#16265C;
+    --navy-soft:#3D4E8A;
+    --ink-dim:#55618F;
+    --scarlet:#B3282D;
+    --scarlet-soft:#C9575B;
+    --gold:#C9A437;
+    --gold-deep:#A88724;
+    --hairline:rgba(22,38,92,.18);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--parchment);
+    color:var(--navy);
+    font-family:'Public Sans',system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+
+  /* ---------- ribbon-bar motif ---------- */
+  .ribbon{height:10px;width:100%;display:flex;border-radius:2px;overflow:hidden}
+  .ribbon span{height:100%}
+
+  /* ---------- hero ---------- */
+  header{
+    position:relative;
+    padding:72px 0 56px;
+    background:
+      radial-gradient(1100px 480px at 78% -10%, rgba(22,38,92,.07), transparent 60%),
+      radial-gradient(700px 380px at 8% 110%, rgba(201,164,55,.12), transparent 60%),
+      var(--parchment);
+    border-bottom:1px solid var(--hairline);
+    overflow:hidden;
+  }
+  header::before{
+    content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+    background-image:repeating-linear-gradient(135deg, var(--navy) 0 2px, transparent 2px 46px);
+  }
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:12px;
+    font-family:'Oswald',sans-serif;font-weight:500;font-size:13px;
+    letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);
+  }
+  .eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+  h1{
+    font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
+    font-size:clamp(42px,6.8vw,80px);line-height:1;letter-spacing:.01em;
+    margin:18px 0 8px;color:var(--navy);
+  }
+  h1 .years{color:var(--scarlet);display:block;font-weight:500;font-size:.55em;letter-spacing:.06em;margin-top:8px}
+  .lede{max-width:600px;color:var(--ink-dim);font-size:17px;margin-top:16px}
+  .lede strong{color:var(--navy);font-weight:600}
+  .hero-ribbon{margin-top:36px;max-width:520px}
+
+  /* quick-jump chips */
+  .partnav{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;max-width:820px}
+  .partnav a{
+    font-family:'Oswald',sans-serif;font-weight:500;font-size:12.5px;
+    letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+    color:var(--navy-soft);border:1px solid var(--hairline);border-radius:4px;
+    padding:8px 14px;background:rgba(255,255,255,.5);
+    transition:border-color .25s ease,color .25s ease;
+  }
+  .partnav a:hover,.partnav a:focus-visible{border-color:var(--gold);color:var(--gold-deep)}
+  .partnav a.hot{border-color:rgba(179,40,45,.5);color:var(--scarlet)}
+  .partnav a.hot:hover{border-color:var(--scarlet)}
+
+  /* ---------- section scaffolding ---------- */
+  section{padding:64px 0}
+  .kicker{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+    letter-spacing:.26em;text-transform:uppercase;color:var(--navy-soft);
+    display:flex;align-items:center;gap:14px;margin-bottom:10px;
+  }
+  .kicker::after{content:"";flex:1;height:1px;background:var(--hairline)}
+  h2{
+    font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;
+    font-size:clamp(26px,3.6vw,38px);letter-spacing:.02em;margin-bottom:8px;color:var(--navy);
+  }
+  .section-note{color:var(--ink-dim);max-width:660px;margin-bottom:36px}
+  .section-note strong{color:var(--navy)}
+  .band{background:var(--cream);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+
+  /* ---------- mission stat band ---------- */
+  .mission-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:start}
+  .mission-quote{
+    border-left:4px solid var(--gold);padding:6px 0 6px 22px;
+    font-size:17px;color:var(--navy);max-width:520px;
+  }
+  .mission-quote em{color:var(--scarlet);font-style:normal;font-weight:600}
+  .mission-note{font-size:14.5px;color:var(--ink-dim);margin-top:18px;max-width:520px}
+  .stat-strip{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hairline);border-radius:6px;overflow:hidden;background:#FFFDF7}
+  .stat-cell{padding:24px 24px;border-bottom:1px solid var(--hairline)}
+  .stat-cell:nth-child(odd){border-right:1px solid var(--hairline)}
+  .stat-cell:nth-last-child(-n+2){border-bottom:none}
+  .stat-num{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:38px;line-height:1;
+    color:var(--navy);font-variant-numeric:tabular-nums;
+  }
+  .stat-num .unit{font-size:.55em;color:var(--gold-deep);font-weight:500}
+  .stat-label{font-size:13px;color:var(--ink-dim);margin-top:7px}
+
+  /* ---------- radar heading ---------- */
+  .radar-head{display:flex;align-items:center;gap:18px;margin-bottom:8px}
+  .radar{
+    flex:none;width:46px;height:46px;border-radius:50%;
+    border:2px solid var(--navy);position:relative;overflow:hidden;background:#FFFDF7;
+  }
+  .radar::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    background:conic-gradient(from 0deg, rgba(179,40,45,.45), transparent 70deg);
+    animation:sweep 4s linear infinite;
+  }
+  .radar::after{
+    content:"";position:absolute;left:50%;top:50%;width:6px;height:6px;border-radius:50%;
+    background:var(--scarlet);transform:translate(-50%,-50%);
+  }
+  @keyframes sweep{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion: reduce){ .radar::before{animation:none} }
+
+  /* ---------- focus group sections ---------- */
+  .goal{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:17px;
+    letter-spacing:.04em;color:var(--scarlet);margin-bottom:22px;max-width:640px;
+  }
+  .planks{list-style:none;max-width:720px}
+  .planks li{
+    position:relative;display:flex;gap:14px;align-items:flex-start;
+    padding:13px 0;border-bottom:1px solid var(--hairline);
+    color:var(--navy);font-size:15.5px;
+  }
+  .planks li::before{
+    content:"";flex:none;margin-top:8px;width:11px;height:6px;
+    background:var(--scarlet);
+    clip-path:polygon(0 100%, 50% 0, 100% 100%);
+  }
+  .planks li .plank-text{flex:1}
+  .star-btn{
+    flex:none;margin-left:auto;align-self:center;
+    width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--hairline);background:#FFFDF7;color:var(--gold-deep);
+    font-size:16px;line-height:1;cursor:pointer;
+    transition:background .2s ease,border-color .2s ease,transform .15s ease;
+  }
+  .star-btn:hover{border-color:var(--gold)}
+  .star-btn:active{transform:scale(.92)}
+  .star-btn[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--navy)}
+  .star-hint{
+    display:none;font-size:13px;color:var(--ink-dim);margin:-18px 0 26px;
+  }
+  .js .star-hint{display:block}
+  .star-hint b{color:var(--gold-deep)}
+
+  /* ---------- GI Bill spotlight ---------- */
+  .fight{background:var(--cream);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .fight .kicker{color:var(--scarlet)}
+  .fight-status{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--scarlet);
+    border:1px solid rgba(179,40,45,.55);border-radius:3px;
+    padding:6px 12px;margin-bottom:22px;background:rgba(179,40,45,.06);
+  }
+  .fight-status::before{
+    content:"";width:8px;height:8px;border-radius:50%;background:var(--scarlet);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.45;transform:scale(.8)}
+  }
+  @media (prefers-reduced-motion: reduce){ .fight-status::before{animation:none} }
+  .fight-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .fight-card{
+    background:#FFFDF7;border:1px solid var(--hairline);border-radius:6px;
+    padding:0 0 24px;transition:transform .35s ease,border-color .35s ease;
+  }
+  .fight-card:hover{transform:translateY(-4px);border-color:rgba(179,40,45,.5)}
+  .fight-card .ribbon{border-radius:6px 6px 0 0}
+  .fight-body{padding:22px 24px 0}
+  .fight-label{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:15px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;
+  }
+  .fight-desc{font-size:14.5px;color:var(--ink-dim)}
+  .fight-cta{
+    margin-top:28px;display:flex;gap:14px;align-items:flex-start;
+    font-size:14px;color:var(--ink-dim);max-width:760px;
+  }
+  .fight-cta::before{content:"★";color:var(--scarlet);font-size:13px;line-height:1.7}
+  .fight-cta strong{color:var(--navy)}
+
+  /* GI Bill mini-timeline */
+  .gitl{margin:40px 0 44px}
+  .gitl-title{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:18px;
+  }
+  .timeline{position:relative}
+  .timeline::before{
+    content:"";position:absolute;left:19px;top:6px;bottom:6px;width:2px;
+    background:linear-gradient(var(--gold) 0 70%, transparent);
+  }
+  .t-item{position:relative;padding:0 0 34px 72px}
+  .t-item:last-child{padding-bottom:0}
+  .t-node{
+    position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
+    background:#FFFDF7;border:2px solid var(--gold);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .t-node::before{
+    content:"";width:14px;height:14px;background:var(--gold);
+    clip-path:polygon(0 65%, 50% 20%, 100% 65%, 100% 90%, 50% 45%, 0 90%);
+  }
+  .t-item.current .t-node{border-color:var(--scarlet)}
+  .t-item.current .t-node::before{background:var(--scarlet)}
+  .t-year{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:24px;
+    letter-spacing:.04em;color:var(--gold-deep);line-height:40px;
+  }
+  .t-item.current .t-year{color:var(--scarlet)}
+  .t-title{font-weight:700;font-size:16.5px;margin:4px 0 4px;color:var(--navy)}
+  .t-item p{max-width:620px;color:var(--ink-dim);font-size:14.5px}
+  .t-tag{
+    display:inline-block;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--scarlet);
+    border:1px solid rgba(179,40,45,.55);border-radius:3px;
+    padding:3px 8px;margin-left:10px;vertical-align:2px;background:rgba(179,40,45,.06);
+  }
+</style>
+<style>
+  /* ---------- priorities builder ---------- */
+  .tray{
+    position:fixed;left:50%;bottom:18px;transform:translate(-50%,120%);
+    display:flex;align-items:center;gap:14px;
+    background:var(--navy);color:var(--parchment);
+    border-radius:99px;padding:10px 12px 10px 20px;
+    box-shadow:0 10px 30px rgba(22,38,92,.25);
+    transition:transform .35s ease;z-index:50;max-width:calc(100vw - 32px);
+  }
+  .tray.show{transform:translate(-50%,0)}
+  .tray-count{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+    letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;
+  }
+  .tray-count b{color:#E3C05C}
+  .tray a{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12.5px;
+    letter-spacing:.14em;text-transform:uppercase;text-decoration:none;
+    background:var(--gold);color:var(--navy);border-radius:99px;padding:9px 16px;white-space:nowrap;
+  }
+  .tray a:hover{background:#E3C05C}
+
+  .builder-card{
+    border:1px solid var(--hairline);border-radius:6px;overflow:hidden;background:#FFFDF7;
+  }
+  .builder-toolbar{
+    display:flex;align-items:center;gap:12px;padding:14px 22px;flex-wrap:wrap;
+    border-bottom:1px solid var(--hairline);background:var(--cream);
+  }
+  .builder-title{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin-right:auto;
+  }
+  .copy-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--gold-deep);background:transparent;border:1px solid rgba(168,135,36,.55);
+    border-radius:4px;padding:8px 14px;cursor:pointer;transition:all .25s ease;
+  }
+  .copy-btn:hover{background:rgba(201,164,55,.12)}
+  .copy-btn.copied{color:#FFFDF7;background:var(--gold-deep);border-color:var(--gold-deep)}
+  .clear-btn{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;
+    letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);
+    background:transparent;border:1px solid var(--hairline);border-radius:4px;
+    padding:8px 14px;cursor:pointer;transition:all .25s ease;
+  }
+  .clear-btn:hover{color:var(--scarlet);border-color:rgba(179,40,45,.5)}
+  .builder-list{padding:24px 26px;font-size:15px;color:var(--navy)}
+  .builder-empty{color:var(--ink-dim);font-size:14.5px}
+  .builder-group{margin-bottom:18px}
+  .builder-group:last-child{margin-bottom:0}
+  .builder-group h4{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:6px;
+  }
+  .builder-group ul{list-style:none}
+  .builder-group li{
+    position:relative;padding:5px 0 5px 20px;color:var(--navy);font-size:14.5px;
+  }
+  .builder-group li::before{
+    content:"";position:absolute;left:0;top:12px;width:9px;height:5px;
+    background:var(--gold);clip-path:polygon(0 100%, 50% 0, 100% 100%);
+  }
+  .builder-foot{
+    display:flex;gap:12px;align-items:flex-start;padding:0 26px 24px;
+    font-size:13.5px;color:var(--ink-dim);
+  }
+  .builder-foot::before{content:"★";color:var(--gold);font-size:12px;line-height:1.7}
+  .builder-foot a{color:var(--gold-deep)}
+
+  /* ---------- get involved ---------- */
+  .involve-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:860px}
+  .involve-card{
+    background:#FFFDF7;border:1px solid var(--hairline);border-radius:6px;padding:0 0 24px;
+    transition:transform .35s ease,border-color .35s ease;
+  }
+  .involve-card:hover{transform:translateY(-4px);border-color:rgba(201,164,55,.6)}
+  .involve-card .ribbon{border-radius:6px 6px 0 0}
+  .involve-body{padding:22px 24px 0}
+  .involve-role{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;
+    letter-spacing:.1em;text-transform:uppercase;color:var(--navy);
+  }
+  .involve-desc{font-size:14.5px;color:var(--ink-dim);margin-top:8px}
+  .involve-desc a{color:var(--gold-deep);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(168,135,36,.4)}
+  .involve-desc a:hover{border-bottom-color:var(--gold-deep)}
+  .involve-list{list-style:none;margin-top:10px}
+  .involve-list li{
+    position:relative;padding:5px 0 5px 20px;color:var(--ink-dim);font-size:14.5px;
+  }
+  .involve-list li::before{
+    content:"";position:absolute;left:0;top:12px;width:9px;height:5px;
+    background:var(--scarlet);clip-path:polygon(0 100%, 50% 0, 100% 100%);
+  }
+
+  /* ---------- footer ---------- */
+  footer{padding:56px 0 44px;text-align:center}
+  .quote{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(20px,2.8vw,28px);letter-spacing:.03em;text-transform:uppercase;
+    max-width:760px;margin:0 auto 10px;line-height:1.35;color:var(--navy);
+  }
+  .quote em{color:var(--scarlet);font-style:normal}
+  .foot-note{font-size:12.5px;color:var(--ink-dim);max-width:680px;margin:22px auto 0}
+  .foot-note a{color:var(--gold-deep)}
+  .foot-ribbon{max-width:300px;margin:30px auto 0}
+
+  /* ---------- reveal animation ---------- */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    .fight-card,.involve-card,.tray{transition:none}
+  }
+  .no-js .reveal{opacity:1;transform:none}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:820px){
+    .mission-grid,.fight-grid,.involve-grid{grid-template-columns:1fr}
+    .stat-strip{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:520px){
+    .stat-strip{grid-template-columns:1fr}
+    .stat-cell:nth-child(odd){border-right:none}
+    .stat-cell{border-bottom:1px solid var(--hairline)}
+    .stat-cell:last-child{border-bottom:none}
+    .tray{gap:10px;padding:8px 10px 8px 16px}
+  }
+</style>
+</head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');document.body.classList.add('js');</script>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">Air Force Sergeants Association</div>
+    <h1>Legislative Platform
+      <span class="years">2026 – 2027</span>
+    </h1>
+    <p class="lede">This platform of legislative objectives is AFSA's <strong>"blueprint" for testimony and advocacy</strong> — seven major focus groups carrying the issues that matter most to our 75,000+ members: Airmen, Guardians, veterans, retirees, survivors, and military families.</p>
+    <div class="ribbon hero-ribbon" aria-hidden="true">
+      <span style="flex:2;background:var(--scarlet)"></span>
+      <span style="flex:1;background:var(--parchment)"></span>
+      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--gold)"></span>
+      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--parchment)"></span>
+      <span style="flex:2;background:var(--scarlet)"></span>
+    </div>
+    <nav class="partnav" aria-label="Platform focus groups">
+      <a href="#pay">Pay, Benefits &amp; Programs</a>
+      <a href="#vetret">Veteran &amp; Retiree Affairs</a>
+      <a href="#milhealth">Military Healthcare</a>
+      <a href="#families">Military Families</a>
+      <a href="#education">Education</a>
+      <a href="#survivors">Caring for Survivors</a>
+      <a href="#guard">Guard &amp; Reserve</a>
+      <a href="#gibill" class="hot">★ GI Bill Transferability</a>
+      <a href="#involved">Get Involved</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ================= MISSION ================= -->
+<section class="band">
+  <div class="wrap">
+    <div class="kicker">The Mission</div>
+    <h2>Defending Quality of Life Since 1961</h2>
+    <div class="mission-grid">
+      <div class="reveal">
+        <p class="mission-quote">In understanding our Nation's current fiscal situation, success will not always be defined by what is gained. Success is also determined by the level at which a benefit is <em>preserved</em> — or by winning a portion of our objective.</p>
+        <p class="mission-note">AFSA is a federally chartered Military and Veterans' Service Organization representing the professional and personal interests of our members, Total Force, and their families. We work in partnership with our nation's Congressional and Military leaders on Capitol Hill, and within the DoD and VA, toward one core mission: improving the quality of life and supporting the well-being of all military personnel and their families.</p>
+      </div>
+      <div class="stat-strip reveal">
+        <div class="stat-cell">
+          <div class="stat-num"><span class="count" data-target="75">0</span><span class="unit">K+</span></div>
+          <div class="stat-label">Members worldwide</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num"><span class="count" data-target="125">0</span></div>
+          <div class="stat-label">Chapters across the globe</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num"><span class="count" data-target="7">0</span></div>
+          <div class="stat-label">Divisions worldwide</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num"><span class="count" data-target="65">0</span><span class="unit">yrs</span></div>
+          <div class="stat-label">Defending quality of life since 1961</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 1 · PAY ================= -->
+<section id="pay">
+  <div class="wrap">
+    <div class="kicker">Focus Group 1 · What's On Our Radar</div>
+    <div class="radar-head">
+      <div class="radar" aria-hidden="true"></div>
+      <h2 style="margin-bottom:0">Pay, Benefits &amp; Programs</h2>
+    </div>
+    <p class="goal">Maintain pay comparability and protect non-pay quality-of-life benefits.</p>
+    <p class="star-hint">Tap the <b>★</b> next to any priority to add it to your personal talking-points list — then copy it for calls, emails, and chapter meetings.</p>
+    <ul class="planks" data-group="Pay, Benefits &amp; Programs">
+      <li class="reveal"><span class="plank-text">Support full military pay raises in line with current law.</span></li>
+      <li class="reveal"><span class="plank-text">Protect and strengthen BAH, COLA, special pays, leave policies, commissaries, exchanges, and MWR programs.</span></li>
+      <li class="reveal"><span class="plank-text">Improve Regular Military Compensation to reflect real-world economic conditions.</span></li>
+      <li class="reveal"><span class="plank-text">Expand bereavement leave and allow voluntary leave transfer between service members.</span></li>
+      <li class="reveal"><span class="plank-text">Strengthen oversight of privatized military housing and enforce the tenant bill of rights.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 2 · VETERAN & RETIREE ================= -->
+<section class="band" id="vetret">
+  <div class="wrap">
+    <div class="kicker">Focus Group 2</div>
+    <h2>Veteran &amp; Retiree Healthcare and Benefits</h2>
+    <p class="goal">Honor service by delivering timely, comprehensive, and equitable care.</p>
+    <ul class="planks" data-group="Veteran &amp; Retiree Affairs">
+      <li class="reveal"><span class="plank-text">Improve access to VA healthcare, reduce claims backlogs, and fully fund ancillary support programs.</span></li>
+      <li class="reveal"><span class="plank-text">Extend concurrent receipt to all disabled retirees, so earned retired pay and disability compensation are received in full.</span></li>
+      <li class="reveal"><span class="plank-text">Support full implementation of the PACT Act to ensure veterans exposed to toxic substances receive timely and complete benefits.</span></li>
+      <li class="reveal"><span class="plank-text">Expand access to Hyperbaric Oxygen Therapy (HBOT) for treatment of persistent TBI and PTSD/PTSI.</span></li>
+      <li class="reveal"><span class="plank-text">Strengthen suicide prevention efforts through research, treatment access, and caregiver support.</span></li>
+      <li class="reveal"><span class="plank-text">Ensure women veterans receive equitable access to high-quality, gender-specific care.</span></li>
+      <li class="reveal"><span class="plank-text">Ensure veterans have access to emerging and alternative therapies, including psychedelic-assisted treatments, under strict medical supervision with full informed consent, safety protocols, and evidence-based evaluation.</span></li>
+      <li class="reveal"><span class="plank-text">Guarantee veterans' right to informed consent across all treatment options, with clear disclosure of risks, benefits, alternatives, and the voluntary nature of participation in any medical or therapeutic intervention.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 3 · MILITARY HEALTHCARE ================= -->
+<section id="milhealth">
+  <div class="wrap">
+    <div class="kicker">Focus Group 3</div>
+    <h2>Military Healthcare</h2>
+    <p class="goal">Protect access, affordability, and readiness of the military health system.</p>
+    <ul class="planks" data-group="Military Healthcare">
+      <li class="reveal"><span class="plank-text">Preserve earned TRICARE benefits and oppose fee increases and higher pharmacy copays.</span></li>
+      <li class="reveal"><span class="plank-text">Expand access to healthcare benefits to keep pace with the private sector and other federal employees.</span></li>
+      <li class="reveal"><span class="plank-text">Ensure any military medical billet reductions or MTF restructuring do not reduce access or shift costs onto families.</span></li>
+      <li class="reveal"><span class="plank-text">Allow pre-tax payment of health, dental, and long-term care premiums to reduce out-of-pocket burden.</span></li>
+      <li class="reveal"><span class="plank-text">Expand access to TRICARE Reserve Select, including for Air Reserve Technicians.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 4 · MILITARY FAMILIES ================= -->
+<section class="band" id="families">
+  <div class="wrap">
+    <div class="kicker">Focus Group 4</div>
+    <h2>Military Families</h2>
+    <p class="goal">Reduce systemic stressors that harm readiness and retention.</p>
+    <ul class="planks" data-group="Military Families">
+      <li class="reveal"><span class="plank-text">Expand access to affordable, high-quality childcare aligned with operational realities.</span></li>
+      <li class="reveal"><span class="plank-text">Strengthen military spouse employment programs and eliminate PCS-driven licensure barriers.</span></li>
+      <li class="reveal"><span class="plank-text">Promote policies that accommodate military lifestyles, including tax and payment flexibility.</span></li>
+      <li class="reveal"><span class="plank-text">Preserve Impact Aid to ensure military-connected children receive consistent educational support.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 5 · EDUCATION ================= -->
+<section id="education">
+  <div class="wrap">
+    <div class="kicker">Focus Group 5</div>
+    <h2>Education</h2>
+    <p class="goal">Protect and modernize education benefits for service members and families.</p>
+    <ul class="planks" data-group="Education">
+      <li class="reveal"><span class="plank-text">Fully fund MilTA, MyCAA, and GI Bill programs and preserve benefit transferability.</span></li>
+      <li class="reveal"><span class="plank-text">Ensure all components of the Total Force have equitable access to federal tuition assistance.</span></li>
+      <li class="reveal"><span class="plank-text">Improve credit transfer and prior learning recognition to reduce time-to-degree and cost.</span></li>
+      <li class="reveal"><span class="plank-text">Focus on empowering the Airman for future success before, during, and after transition.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 6 · SURVIVORS ================= -->
+<section class="band" id="survivors">
+  <div class="wrap">
+    <div class="kicker">Focus Group 6</div>
+    <h2>Caring for Survivors</h2>
+    <p class="goal">Ensure survivors are not penalized for their sacrifice.</p>
+    <ul class="planks" data-group="Caring for Survivors">
+      <li class="reveal"><span class="plank-text">Allow surviving spouses to receive the full final month of retired pay.</span></li>
+      <li class="reveal"><span class="plank-text">Permit DIC recipients to remarry at age 55 without loss of benefits.</span></li>
+      <li class="reveal"><span class="plank-text">Protect survivor benefits from offsets or erosion under budgetary pressures.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= FOCUS GROUP 7 · GUARD & RESERVE ================= -->
+<section id="guard">
+  <div class="wrap">
+    <div class="kicker">Focus Group 7</div>
+    <h2>Air National Guard &amp; Air Force Reserve</h2>
+    <p class="goal">Deliver benefit equity without reducing compensation value.</p>
+    <ul class="planks" data-group="Air National Guard &amp; Air Force Reserve">
+      <li class="reveal"><span class="plank-text">Credit all post-9/11 active-duty service toward Guard and Reserve early retirement.</span></li>
+      <li class="reveal"><span class="plank-text">Reduce the retirement age and remove caps on creditable inactive duty points.</span></li>
+      <li class="reveal"><span class="plank-text">Expand education benefits for Guard members and dual-status technicians.</span></li>
+      <li class="reveal"><span class="plank-text">Reform duty status authorities to ensure compensation, benefits, and protections match service performed.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= GI BILL TRANSFERABILITY SPOTLIGHT ================= -->
+<section class="fight" id="gibill">
+  <div class="wrap">
+    <div class="kicker">Platform Spotlight · Education</div>
+    <h2>Securing the Promise: GI Bill Transferability</h2>
+    <div class="fight-status">Active Advocacy — Before Congress Now</div>
+    <p class="section-note">The Education plank calls on Congress to <strong>preserve benefit transferability</strong> — and this is where that plank meets the current fight. AFSA is championing bipartisan reform to modernize the Post-9/11 GI Bill's transfer rules so they keep pace with how military families actually grow. A benefit earned in uniform shouldn't expire at the front gate.</p>
+
+    <div class="gitl">
+      <p class="gitl-title">How We Got Here — The Education Record</p>
+      <div class="timeline">
+        <div class="t-item reveal">
+          <div class="t-node" aria-hidden="true"></div>
+          <div class="t-year">1997</div>
+          <div class="t-title">Education Breakthrough</div>
+          <p>100 percent Tuition Assistance authorized, and Montgomery GI Bill enrollment opened to VEAP-era members.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-node" aria-hidden="true"></div>
+          <div class="t-year">2008</div>
+          <div class="t-title">The Post-9/11 GI Bill</div>
+          <p>Full state college tuition plus housing and book stipends — and GI Bill transferability to spouses and children secured for the first time.</p>
+        </div>
+        <div class="t-item reveal">
+          <div class="t-node" aria-hidden="true"></div>
+          <div class="t-year">2017</div>
+          <div class="t-title">The "Forever" GI Bill</div>
+          <p>Lifetime benefit with no expiration, Purple Heart eligibility, expanded transferability, and STEM assistance.</p>
+        </div>
+        <div class="t-item current reveal">
+          <div class="t-node" aria-hidden="true"></div>
+          <div class="t-year">2026<span class="t-tag">The Fight Continues</span></div>
+          <div class="t-title">Transferability Reform</div>
+          <p>AFSA is working with Congress to finish the job — updating transfer rules so the families of those who served aren't left behind by a paperwork deadline.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="fight-grid">
+      <div class="fight-card reveal">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--scarlet)"></span>
+          <span style="flex:1;background:var(--parchment)"></span>
+          <span style="flex:1;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--parchment)"></span>
+          <span style="flex:2;background:var(--scarlet)"></span>
+        </div>
+        <div class="fight-body">
+          <div class="fight-label">The Problem</div>
+          <p class="fight-desc">Under current law, GI Bill benefits can only be transferred while still serving — with a four-year additional service obligation. Members who separate or retire before transferring, or who welcome children later in life, lose the option forever, no matter how many years they served.</p>
+        </div>
+      </div>
+      <div class="fight-card reveal" style="transition-delay:.1s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:1;background:var(--gold)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--parchment)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--gold)"></span>
+        </div>
+        <div class="fight-body">
+          <div class="fight-label">The Fix</div>
+          <p class="fight-desc">Allow eligible members and veterans to transfer earned benefits to a spouse or child at any time — during service or after separation — including dependents added to the family after retirement, so no one is penalized for when their family grows.</p>
+        </div>
+      </div>
+      <div class="fight-card reveal" style="transition-delay:.2s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:2;background:var(--gold)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+        </div>
+        <div class="fight-body">
+          <div class="fight-label">Why It Matters</div>
+          <p class="fight-desc">Transferability was built as a retention tool — but the rules haven't kept pace with military family life. Enlisted families disproportionately grow later in a career and lose out. Fairness means the benefit follows the service, not the paperwork deadline.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="fight-cta">AFSA is engaging members of Congress and testifying alongside The Military Coalition to move transferability reform this session. Legislative avenues include the bipartisan <strong>Military Family GI Bill Promise Act (H.R. 4540)</strong>, alongside companion efforts to open transfer eligibility at ten years of service and extend benefits to foster children and legal wards.</p>
+  </div>
+</section>
+
+<!-- ================= MY PRIORITIES BUILDER ================= -->
+<section id="mylist">
+  <div class="wrap">
+    <div class="kicker">Interactive Tool</div>
+    <h2>My Priorities</h2>
+    <p class="section-note">The priorities you starred above, gathered in one place. Copy the list and pair it with the phone scripts and email templates in the <strong>Chapter Legislative Engagement Toolkit</strong> — your personal talking points for the next call, email, or chapter meeting.</p>
+
+    <div class="builder-card reveal">
+      <div class="builder-toolbar">
+        <span class="builder-title">My AFSA Talking Points</span>
+        <button class="clear-btn" id="clearBtn" hidden>Clear all</button>
+        <button class="copy-btn" id="copyList" hidden>Copy list</button>
+      </div>
+      <div class="builder-list" id="builderList">
+        <p class="builder-empty" id="builderEmpty">No priorities starred yet. Scroll through the seven focus groups above and tap the ★ beside the issues that matter most to you — they'll collect here automatically. (If the star buttons aren't visible, enable JavaScript; every priority is still readable above.)</p>
+      </div>
+      <p class="builder-foot">Remember the rule of thumb from the toolkit: in uniform — inform; out of uniform — advocate. When contacting Congress, make clear you're speaking in your personal capacity, and don't use your government email.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GET INVOLVED ================= -->
+<section class="band" id="involved">
+  <div class="wrap">
+    <div class="kicker">Take Action</div>
+    <h2>Learn More and Get Involved</h2>
+    <p class="section-note">Every win in this platform starts with members who show up. Here's where to plug in.</p>
+    <div class="involve-grid">
+      <div class="involve-card reveal">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--parchment)"></span>
+          <span style="flex:1;background:var(--gold)"></span>
+          <span style="flex:1;background:var(--parchment)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+        </div>
+        <div class="involve-body">
+          <div class="involve-role">AFSA Legislation Action Center</div>
+          <p class="involve-desc">Visit <a href="https://www.hqafsa.org/takeaction" target="_blank" rel="noopener">hqafsa.org/takeaction</a> to:</p>
+          <ul class="involve-list">
+            <li>Search and contact your elected officials by zip code</li>
+            <li>Engage with customized AFSA advocacy campaigns</li>
+            <li>Sign up for AFSA's Military &amp; Government Brief and Legislative Alerts</li>
+            <li>Keep up to date on AFSA's legislative priorities throughout the year</li>
+          </ul>
+        </div>
+      </div>
+      <div class="involve-card reveal" style="transition-delay:.1s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:1;background:var(--gold)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--gold)"></span>
+        </div>
+        <div class="involve-body">
+          <div class="involve-role">Questions About Our Priorities?</div>
+          <p class="involve-desc">Reach out to AFSA's Military and Government Relations team at <a href="mailto:milgov3@hqafsa.org">milgov3@hqafsa.org</a>.</p>
+          <p class="involve-desc">With 7 Divisions and 125 Chapters across the globe, AFSA Chapters carry out our mission and strategic goals at the community level — with reverence for God and Country, working with our nation's Congressional and Military Leaders on Capitol Hill, and within the DoD and VA.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="quote">"At its core, our mission is, and will always be, to defend the quality of life for <em>service members and their families.</em>"</p>
+    <div class="ribbon foot-ribbon" aria-hidden="true">
+      <span style="flex:2;background:var(--scarlet)"></span>
+      <span style="flex:1;background:var(--parchment)"></span>
+      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--gold)"></span>
+      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--parchment)"></span>
+      <span style="flex:2;background:var(--scarlet)"></span>
+    </div>
+    <p class="foot-note">Source: AFSA 2026/27 Legislative Platform, Air Force Sergeants Association. GI Bill history drawn from AFSA's documented legislative record (1992–2026). This platform serves as a blueprint for testimony and advocacy efforts, in conjunction with responses dictated by day-to-day events. <a href="https://www.hqafsa.org" target="_blank" rel="noopener">www.hqafsa.org</a> · #WeAreAFSA</p>
+  </div>
+</footer>
+
+<!-- sticky priorities tray -->
+<div class="tray" id="tray" role="status" aria-live="polite">
+  <span class="tray-count"><b id="trayNum">0</b> priorities starred</span>
+  <a href="#mylist">View my list</a>
+</div>
+
+<script>
+  // ---------- scroll reveal ----------
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // ---------- count-up ----------
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function animateCount(el){
+    const target = parseFloat(el.dataset.target);
+    if(reduced){ el.textContent = target; return; }
+    const dur = 1400, start = performance.now();
+    function tick(now){
+      const p = Math.min((now-start)/dur,1);
+      const eased = 1-Math.pow(1-p,3);
+      el.textContent = Math.round(target*eased);
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  const cio = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ animateCount(e.target); cio.unobserve(e.target); }
+    });
+  },{threshold:.6});
+  document.querySelectorAll('.count').forEach(el=>cio.observe(el));
+
+  // ---------- priorities builder ----------
+  const selected = new Map(); // id -> {group, text}
+  const groupsOrder = [];
+  const tray = document.getElementById('tray');
+  const trayNum = document.getElementById('trayNum');
+  const listEl = document.getElementById('builderList');
+  const emptyEl = document.getElementById('builderEmpty');
+  const copyBtn = document.getElementById('copyList');
+  const clearBtn = document.getElementById('clearBtn');
+
+  let plankId = 0;
+  document.querySelectorAll('.planks').forEach(ul=>{
+    const group = ul.dataset.group;
+    groupsOrder.push(group);
+    ul.querySelectorAll('li').forEach(li=>{
+      const id = 'plank-' + (++plankId);
+      const text = li.querySelector('.plank-text').textContent.trim();
+      const btn = document.createElement('button');
+      btn.className = 'star-btn';
+      btn.type = 'button';
+      btn.textContent = '☆';
+      btn.setAttribute('aria-pressed','false');
+      btn.setAttribute('aria-label','Add to my priorities: ' + text);
+      btn.addEventListener('click',()=>{
+        const on = btn.getAttribute('aria-pressed') === 'true';
+        if(on){ selected.delete(id); btn.textContent='☆'; }
+        else{ selected.set(id,{group,text}); btn.textContent='★'; }
+        btn.setAttribute('aria-pressed', String(!on));
+        render();
+      });
+      li.appendChild(btn);
+      li.dataset.plankId = id;
+    });
+  });
+
+  function render(){
+    const n = selected.size;
+    trayNum.textContent = n;
+    tray.classList.toggle('show', n > 0);
+    copyBtn.hidden = clearBtn.hidden = (n === 0);
+    if(n === 0){
+      listEl.innerHTML = '';
+      listEl.appendChild(emptyEl);
+      return;
+    }
+    const byGroup = {};
+    selected.forEach(v=>{
+      (byGroup[v.group] = byGroup[v.group] || []).push(v.text);
+    });
+    listEl.innerHTML = '';
+    groupsOrder.forEach(g=>{
+      if(!byGroup[g]) return;
+      const div = document.createElement('div');
+      div.className = 'builder-group';
+      const h = document.createElement('h4'); h.textContent = g; div.appendChild(h);
+      const ul = document.createElement('ul');
+      byGroup[g].forEach(t=>{
+        const li = document.createElement('li'); li.textContent = t; ul.appendChild(li);
+      });
+      div.appendChild(ul);
+      listEl.appendChild(div);
+    });
+  }
+
+  clearBtn.addEventListener('click',()=>{
+    selected.clear();
+    document.querySelectorAll('.star-btn[aria-pressed="true"]').forEach(b=>{
+      b.setAttribute('aria-pressed','false'); b.textContent='☆';
+    });
+    render();
+  });
+
+  copyBtn.addEventListener('click',async ()=>{
+    const byGroup = {};
+    selected.forEach(v=>{ (byGroup[v.group] = byGroup[v.group] || []).push(v.text); });
+    let out = 'MY AFSA LEGISLATIVE PRIORITIES — 2026/27 PLATFORM\n';
+    groupsOrder.forEach(g=>{
+      if(!byGroup[g]) return;
+      out += '\n' + g.toUpperCase() + '\n';
+      byGroup[g].forEach(t=>{ out += '  • ' + t + '\n'; });
+    });
+    out += '\nSource: AFSA 2026/27 Legislative Platform · hqafsa.org/takeaction';
+    try{ await navigator.clipboard.writeText(out); }
+    catch(err){
+      const ta=document.createElement('textarea');
+      ta.value=out; document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); ta.remove();
+    }
+    const orig = copyBtn.textContent;
+    copyBtn.textContent='Copied ✓'; copyBtn.classList.add('copied');
+    setTimeout(()=>{ copyBtn.textContent=orig; copyBtn.classList.remove('copied'); },1800);
+  });
+</script>
+</body>
+</html>
