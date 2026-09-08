@@ -3,31 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AFSA Legislative Impact · 2022–2026</title>
+<title>AFSA Legislative Impact · 1992–2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
-    /* Platform-page colorway: parchment ground, flag navy, AFSA scarlet, gold */
-    --page:#F8F6F0;           /* parchment white */
-    --card:#FFFFFF;
-    --cream:#EDE6D4;          /* badge tan */
-    --navy:#16265C;           /* flag navy */
-    --navy-soft:#3A4C86;
-    --scarlet:#B3282D;        /* AFSA red */
-    --scarlet-deep:#8F1F24;
-    --gold:#C9A437;
-    --gold-deep:#A88724;
-    --ink:#1B2440;
-    --ink-dim:#5A6584;
-    --hairline:rgba(22,38,92,.14);
+    /* Parchment colorway: light ground, flag navy ink, AF gold & heraldic scarlet accents */
+    --navy:#F8F6F0;          /* parchment white — page & card ground */
+    --navy-2:#EDE6D4;        /* badge tan — alternating bands */
+    --navy-3:#16265C;        /* flag navy — ribbon segments */
+    --afblue:#2E5AAD;        /* ultramarine accent (graphics) */
+    --afblue-soft:#33509E;   /* ultramarine text accent */
+    --gold:#C9A437;          /* Air Force gold (graphics) */
+    --gold-bright:#A88724;   /* deep gold (text on light) */
+    --scarlet:#B3282D;       /* heraldic scarlet */
+    --paper:#16265C;         /* flag navy ink — primary text */
+    --ink-dim:#5C6584;       /* muted slate ink */
+    --hairline:rgba(22,38,92,.16);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{
-    background:var(--page);
-    color:var(--ink);
+    background:var(--navy);
+    color:var(--paper);
     font-family:'Public Sans',system-ui,sans-serif;
     font-size:16px;
     line-height:1.55;
@@ -44,72 +43,69 @@
     position:relative;
     padding:72px 0 56px;
     background:
-      radial-gradient(1100px 480px at 78% -10%, rgba(22,38,92,.07), transparent 60%),
-      radial-gradient(700px 380px at 8% 110%, rgba(201,164,55,.10), transparent 60%),
-      var(--page);
+      radial-gradient(1100px 480px at 78% -10%, rgba(46,90,173,.10), transparent 60%),
+      radial-gradient(700px 380px at 8% 110%, rgba(201,164,55,.12), transparent 60%),
+      var(--navy);
     border-bottom:1px solid var(--hairline);
     overflow:hidden;
   }
-  /* chevron field, echoing enlisted stripes */
   header::before{
-    content:"";position:absolute;inset:0;opacity:.045;pointer-events:none;
-    background-image:repeating-linear-gradient(135deg, var(--navy) 0 2px, transparent 2px 46px);
+    content:"";position:absolute;inset:0;opacity:.05;pointer-events:none;
+    background-image:repeating-linear-gradient(135deg, var(--paper) 0 2px, transparent 2px 46px);
   }
   .eyebrow{
     display:inline-flex;align-items:center;gap:12px;
     font-family:'Oswald',sans-serif;font-weight:500;font-size:13px;
-    letter-spacing:.28em;text-transform:uppercase;color:var(--scarlet);
+    letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright);
   }
   .eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
   h1{
     font-family:'Oswald',sans-serif;font-weight:700;text-transform:uppercase;
     font-size:clamp(44px,7vw,84px);line-height:.98;letter-spacing:.01em;
-    margin:18px 0 8px;color:var(--navy);
+    margin:18px 0 8px;
   }
-  h1 .years{color:var(--gold-deep);display:block;font-weight:500;font-size:.55em;letter-spacing:.06em;margin-top:8px}
+  h1 .years{color:var(--afblue-soft);display:block;font-weight:500;font-size:.55em;letter-spacing:.06em;margin-top:8px}
   .lede{max-width:560px;color:var(--ink-dim);font-size:17px;margin-top:16px}
-  .lede strong{color:var(--navy);font-weight:600}
+  .lede strong{color:var(--paper);font-weight:600}
   .hero-ribbon{margin-top:36px;max-width:520px}
 
   /* ---------- section scaffolding ---------- */
   section{padding:64px 0}
   .kicker{
     font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;
-    letter-spacing:.26em;text-transform:uppercase;color:var(--navy-soft);
+    letter-spacing:.26em;text-transform:uppercase;color:var(--afblue-soft);
     display:flex;align-items:center;gap:14px;margin-bottom:10px;
   }
   .kicker::after{content:"";flex:1;height:1px;background:var(--hairline)}
   h2{
     font-family:'Oswald',sans-serif;font-weight:600;text-transform:uppercase;
     font-size:clamp(26px,3.6vw,38px);letter-spacing:.02em;margin-bottom:8px;
-    color:var(--navy);
   }
   .section-note{color:var(--ink-dim);max-width:640px;margin-bottom:36px}
 
   /* ---------- PACT Act spotlight ---------- */
-  .pact{background:var(--cream);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .pact{background:var(--navy-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
   .pact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
   .stat-card{
-    background:var(--card);
+    background:var(--navy);
     border:1px solid var(--hairline);
     border-radius:6px;
     padding:0 0 26px;
     display:flex;flex-direction:column;
-    box-shadow:0 1px 3px rgba(22,38,92,.06);
     transition:transform .35s ease, border-color .35s ease;
   }
-  .stat-card:hover{transform:translateY(-4px);border-color:rgba(201,164,55,.6)}
+  .stat-card:hover{transform:translateY(-4px);border-color:rgba(168,135,36,.55);box-shadow:0 10px 26px rgba(22,38,92,.08)}
   .stat-card .ribbon{border-radius:6px 6px 0 0}
   .stat-body{padding:24px 26px 0}
   .stat-num{
     font-family:'Oswald',sans-serif;font-weight:700;
     font-size:clamp(46px,6vw,68px);line-height:1;
-    font-variant-numeric:tabular-nums;color:var(--navy);
+    font-variant-numeric:tabular-nums;color:var(--paper);
   }
-  .stat-num .unit{font-size:.55em;font-weight:500;color:var(--gold-deep);margin-left:2px}
+  .stat-num .unit{font-size:.55em;font-weight:500;color:var(--gold-bright);margin-left:2px}
   .stat-label{
     font-family:'Oswald',sans-serif;font-weight:500;font-size:15px;
-    letter-spacing:.14em;text-transform:uppercase;color:var(--scarlet);
+    letter-spacing:.14em;text-transform:uppercase;color:var(--afblue-soft);
     margin:12px 0 8px;
   }
   .stat-desc{font-size:14.5px;color:var(--ink-dim)}
@@ -118,7 +114,51 @@
     font-size:14px;color:var(--ink-dim);max-width:720px;
   }
   .pact-foot::before{
-    content:"★";color:var(--gold-deep);font-size:13px;line-height:1.7;
+    content:"★";color:var(--gold);font-size:13px;line-height:1.7;
+  }
+
+  /* ---------- current-fight spotlight (scarlet variant) ---------- */
+  .fight{background:var(--navy-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .fight .kicker{color:var(--scarlet)}
+  .fight .stat-card:hover{border-color:rgba(179,40,45,.55)}
+  .fight-status{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'Oswald',sans-serif;font-size:12px;font-weight:600;
+    letter-spacing:.2em;text-transform:uppercase;color:var(--scarlet);
+    border:1px solid rgba(179,40,45,.55);border-radius:3px;
+    padding:6px 12px;margin-bottom:22px;background:rgba(179,40,45,.08);
+  }
+  .fight-status::before{
+    content:"";width:8px;height:8px;border-radius:50%;background:var(--scarlet);
+    animation:pulse 2s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%,100%{opacity:1;transform:scale(1)}
+    50%{opacity:.45;transform:scale(.8)}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .fight-status::before{animation:none}
+  }
+  .fight .stat-label{color:var(--afblue-soft)}
+  .avenues-grid{grid-template-columns:repeat(2,1fr)}
+  @media (max-width:820px){
+    .avenues-grid{grid-template-columns:1fr}
+  }
+  .fight-cta{
+    margin-top:28px;display:flex;gap:14px;align-items:flex-start;
+    font-size:14px;color:var(--ink-dim);max-width:720px;
+  }
+  .fight-cta::before{
+    content:"★";color:var(--scarlet);font-size:13px;line-height:1.7;
+  }
+
+  /* ---------- era header ---------- */
+  .era-head{
+    display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;margin-bottom:6px;
+  }
+  .era-range{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:clamp(20px,2.6vw,26px);color:var(--gold-bright);letter-spacing:.06em;
   }
 
   /* ---------- timeline ---------- */
@@ -131,50 +171,54 @@
   .t-item:last-child{padding-bottom:0}
   .t-node{
     position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;
-    background:var(--card);border:2px solid var(--gold);
+    background:var(--navy-2);border:2px solid var(--gold);
     display:flex;align-items:center;justify-content:center;
-    box-shadow:0 1px 3px rgba(22,38,92,.08);
   }
-  /* single chevron mark inside node */
   .t-node::before{
     content:"";width:14px;height:14px;
-    background:var(--gold-deep);
+    background:var(--gold);
     clip-path:polygon(0 65%, 50% 20%, 100% 65%, 100% 90%, 50% 45%, 0 90%);
   }
   .t-item.current .t-node{border-color:var(--scarlet)}
   .t-item.current .t-node::before{background:var(--scarlet)}
   .t-year{
     font-family:'Oswald',sans-serif;font-weight:700;font-size:26px;
-    letter-spacing:.04em;color:var(--gold-deep);line-height:40px;
+    letter-spacing:.04em;color:var(--gold-bright);line-height:40px;
   }
   .t-item.current .t-year{color:var(--scarlet)}
-  .t-title{font-weight:700;font-size:17px;margin:6px 0 6px;color:var(--navy)}
+  .t-title{font-weight:700;font-size:17px;margin:6px 0 6px;color:var(--paper)}
   .t-item ul{list-style:none;max-width:620px}
   .t-item li{
     position:relative;padding-left:20px;color:var(--ink-dim);font-size:15px;margin-bottom:6px;
   }
   .t-item li::before{
     content:"";position:absolute;left:0;top:9px;width:9px;height:5px;
-    background:var(--navy-soft);
+    background:var(--afblue);
     clip-path:polygon(0 100%, 50% 0, 100% 100%);
   }
   .t-tag{
     display:inline-block;font-family:'Oswald',sans-serif;font-size:11px;font-weight:600;
     letter-spacing:.18em;text-transform:uppercase;color:var(--scarlet);
     border:1px solid rgba(179,40,45,.55);border-radius:3px;
-    padding:3px 8px;margin-left:10px;vertical-align:2px;background:rgba(179,40,45,.06);
+    padding:3px 8px;margin-left:10px;vertical-align:2px;background:rgba(179,40,45,.08);
+  }
+  .t-tag.gold{
+    color:var(--gold-bright);border-color:rgba(201,164,55,.55);background:rgba(201,164,55,.10);
   }
 
+  /* alternate band for every other era section */
+  .era-alt{background:var(--navy-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+
   /* ---------- record band ---------- */
-  .record{background:var(--cream);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
-  .record-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hairline);border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(22,38,92,.06)}
-  .record-cell{padding:30px 28px;background:var(--card)}
+  .record{background:var(--navy-2);border-top:1px solid var(--hairline);border-bottom:1px solid var(--hairline)}
+  .record-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--hairline);border-radius:6px;overflow:hidden}
+  .record-cell{padding:30px 28px;background:var(--navy)}
   .record-cell + .record-cell{border-left:1px solid var(--hairline)}
   .record-num{
     font-family:'Oswald',sans-serif;font-weight:700;font-size:44px;line-height:1;
-    color:var(--navy);font-variant-numeric:tabular-nums;
+    color:var(--paper);font-variant-numeric:tabular-nums;
   }
-  .record-num .unit{font-size:.55em;color:var(--gold-deep);font-weight:500}
+  .record-num .unit{font-size:.55em;color:var(--gold-bright);font-weight:500}
   .record-label{font-size:13.5px;color:var(--ink-dim);margin-top:8px;letter-spacing:.02em}
 
   /* ---------- footer ---------- */
@@ -182,9 +226,9 @@
   .quote{
     font-family:'Oswald',sans-serif;font-weight:500;
     font-size:clamp(20px,2.8vw,28px);letter-spacing:.03em;text-transform:uppercase;
-    max-width:760px;margin:0 auto 10px;line-height:1.35;color:var(--navy);
+    max-width:760px;margin:0 auto 10px;line-height:1.35;
   }
-  .quote em{color:var(--scarlet);font-style:normal}
+  .quote em{color:var(--gold-bright);font-style:normal}
   .foot-note{font-size:12.5px;color:var(--ink-dim);max-width:640px;margin:22px auto 0}
   .foot-ribbon{max-width:300px;margin:30px auto 0}
 
@@ -210,16 +254,16 @@
   <div class="wrap">
     <div class="eyebrow">Air Force Sergeants Association</div>
     <h1>Legislative Impact
-      <span class="years">2022 – 2026</span>
+      <span class="years">1992 – 2026</span>
     </h1>
-    <p class="lede">Four years of documented results for <strong>enlisted Airmen and Guardians, veterans, retirees, survivors, and military families</strong> — from the largest toxic-exposure expansion in VA history to historic pay and quality-of-life wins.</p>
+    <p class="lede">More than three decades of documented results for <strong>enlisted Airmen and Guardians, veterans, retirees, survivors, and military families</strong> — from doubling SGLI in 1992 to the largest toxic-exposure expansion in VA history and today's historic pay and quality-of-life wins.</p>
     <div class="ribbon hero-ribbon" aria-hidden="true">
       <span style="flex:2;background:var(--scarlet)"></span>
-      <span style="flex:1;background:var(--cream)"></span>
-      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--paper)"></span>
+      <span style="flex:3;background:var(--afblue)"></span>
       <span style="flex:1;background:var(--gold)"></span>
-      <span style="flex:3;background:var(--navy)"></span>
-      <span style="flex:1;background:var(--cream)"></span>
+      <span style="flex:3;background:var(--afblue)"></span>
+      <span style="flex:1;background:var(--paper)"></span>
       <span style="flex:2;background:var(--scarlet)"></span>
     </div>
   </div>
@@ -236,9 +280,9 @@
       <div class="stat-card reveal">
         <div class="ribbon" aria-hidden="true">
           <span style="flex:1;background:var(--scarlet)"></span>
-          <span style="flex:1;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--navy-3)"></span>
           <span style="flex:2;background:var(--gold)"></span>
-          <span style="flex:1;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--navy-3)"></span>
           <span style="flex:1;background:var(--scarlet)"></span>
         </div>
         <div class="stat-body">
@@ -250,11 +294,11 @@
 
       <div class="stat-card reveal" style="transition-delay:.1s">
         <div class="ribbon" aria-hidden="true">
-          <span style="flex:2;background:var(--navy)"></span>
-          <span style="flex:1;background:var(--cream)"></span>
+          <span style="flex:2;background:var(--afblue)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
           <span style="flex:1;background:var(--gold)"></span>
-          <span style="flex:1;background:var(--cream)"></span>
-          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:2;background:var(--afblue)"></span>
         </div>
         <div class="stat-body">
           <div class="stat-num"><span class="count" data-target="1.2" data-decimals="1">0</span><span class="unit">M+</span></div>
@@ -266,9 +310,9 @@
       <div class="stat-card reveal" style="transition-delay:.2s">
         <div class="ribbon" aria-hidden="true">
           <span style="flex:1;background:var(--gold)"></span>
-          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:2;background:var(--navy-3)"></span>
           <span style="flex:1;background:var(--scarlet)"></span>
-          <span style="flex:2;background:var(--navy)"></span>
+          <span style="flex:2;background:var(--navy-3)"></span>
           <span style="flex:1;background:var(--gold)"></span>
         </div>
         <div class="stat-body">
@@ -283,31 +327,458 @@
   </div>
 </section>
 
-<!-- ================= TIMELINE ================= -->
+<!-- ================= ERA I · 1992–1999 ================= -->
 <section>
   <div class="wrap">
-    <div class="kicker">Year by Year</div>
-    <h2>Landmark Wins, 2022–2026</h2>
-    <p class="section-note">Every year of this window produced documented gains for the enlisted force and their families.</p>
+    <div class="kicker">Era I · Building the Foundation</div>
+    <div class="era-head">
+      <h2>The Foundation Years</h2>
+      <span class="era-range">1992 – 1999</span>
+    </div>
+    <p class="section-note">AFSA's earliest documented wins built the bedrock of today's enlisted benefits — doubling life insurance coverage, protecting retirement, and locking in pay raises that beat the private sector.</p>
 
     <div class="timeline">
       <div class="t-item reveal">
         <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1992</div>
+        <div class="t-title">The Record Begins</div>
+        <ul>
+          <li>SGLI maximum doubled from $50K to $100K</li>
+          <li>Family Separation Allowance increased from $60 to $75</li>
+          <li>CONUS COLA established; TLE extended from 4 to 10 days for CONUS moves</li>
+          <li>Reimbursement of adoption expenses authorized</li>
+          <li>Unemployment compensation for GIs put on parity with civilians</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1993</div>
+        <div class="t-title">Retirement &amp; Health Protections</div>
+        <ul>
+          <li>SGLI maximum doubled again — $100K to $200K</li>
+          <li>Retirement eligibility tenure guaranteed after 18 years of service</li>
+          <li>CHAMPUS catastrophic cap cut from $10K to $7.5K</li>
+          <li>Longevity pay increase won for personnel at the 24-year point</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1994</div>
+        <div class="t-title">Defending the Benefit</div>
+        <ul>
+          <li>Stopped DoD plan to close CONUS commissaries "well-served" by private stores</li>
+          <li>Stopped effort to deny retiree COLAs until age 62</li>
+          <li>Won retirement protection for enlisted Guard/Reserve with 18 YOS</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1995</div>
+        <div class="t-title">TRICARE &amp; Survivor Gains</div>
+        <ul>
+          <li>Successfully reduced TRICARE co-payments and enrollment fees</li>
+          <li>Survivors' time in housing doubled — from 90 to 180 days after active-duty deaths</li>
+          <li>Guard/Reserve IDT points made creditable toward retirement</li>
+          <li>Dependent dental plan made available overseas</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1996</div>
+        <div class="t-title">Housing &amp; Retirement Defense</div>
+        <ul>
+          <li>5.2% BAQ increase — over twice the pay-raise percentage</li>
+          <li>Stopped DoD's "High One" retirement plan that would have cut retired pay</li>
+          <li>Guard/Reserve mobilization and dental insurance programs established</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1997</div>
+        <div class="t-title">Education Breakthrough</div>
+        <ul>
+          <li>100 percent Tuition Assistance authorized</li>
+          <li>Montgomery GI Bill enrollment opened to VEAP-era members</li>
+          <li>Guard/Reserve IDT points toward retirement increased from 60 to 75</li>
+          <li>DoD directed to create a retiree dental insurance program</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1998</div>
+        <div class="t-title">Pay &amp; Allowance Reform</div>
+        <ul>
+          <li>Hardship Duty Pay (up to $300/month) established</li>
+          <li>BAS linked to an average moderate-cost food plan</li>
+          <li>Family Separation Allowance increased from $75 to $100 per month</li>
+          <li>TRICARE Prime catchment expanded beyond the 40-mile radius</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">1999</div>
+        <div class="t-title">Landmark Pay &amp; Retirement Wins<span class="t-tag gold">Milestone</span></div>
+        <ul>
+          <li>Won 2000–2006 pay raises exceeding private-sector growth by 0.5% per year</li>
+          <li>Repealed the REDUX retirement system that cut lifetime retired pay by 20%</li>
+          <li>First-step "concurrent receipt" legislation for severely disabled retirees</li>
+          <li>Full repeal of dual-compensation penalties on retirees in federal civilian jobs</li>
+          <li>Minimum SBP annuity secured for all "forgotten widows"</li>
+          <li>TSP-style tax-deferred savings authority for active/Reserve members</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ERA II · 2000–2009 ================= -->
+<section class="era-alt">
+  <div class="wrap">
+    <div class="kicker">Era II · A Nation at War</div>
+    <div class="era-head">
+      <h2>The Post-9/11 Era</h2>
+      <span class="era-range">2000 – 2009</span>
+    </div>
+    <p class="section-note">From TRICARE for Life to the Post-9/11 GI Bill, this decade transformed health care, education, and survivor benefits for a force at war.</p>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2000</div>
+        <div class="t-title">TRICARE for Life<span class="t-tag gold">Milestone</span></div>
+        <ul>
+          <li>TRICARE for Life authorized for Medicare-eligible beneficiaries</li>
+          <li>Retiree catastrophic cap slashed from $7,500 to $3,000 per year</li>
+          <li>TRICARE Prime copays eliminated for active-duty family members</li>
+          <li>Thrift Savings Plan enrollment authorized for active/Reserve members</li>
+          <li>SGLI coverage increased to $250,000; MGIB benefits up 21%</li>
+          <li>Median out-of-pocket housing expense set on path to zero by 2005</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2001</div>
+        <div class="t-title">Health Care &amp; Survivor Protections</div>
+        <ul>
+          <li>Prohibited forcing retirees to choose between TRICARE and VA health care</li>
+          <li>SBP coverage extended to survivors of members who die on active duty</li>
+          <li>Minimum 6% enlisted raise, up to 10% for selected grades; housing up 10%</li>
+          <li>MGIB education benefits increased 46% over three years</li>
+          <li>Type II diabetes added to Agent Orange presumptive conditions</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2002</div>
+        <div class="t-title">Guard &amp; Reserve Parity</div>
+        <ul>
+          <li>Average 11.7% two-year pay raise — 4% above the private sector</li>
+          <li>New special compensation tantamount to concurrent receipt for combat-related disabilities</li>
+          <li>TRICARE Prime access for Guard/Reserve activated over 30 days</li>
+          <li>Reserve retirement qualifying window reduced from 8 to 6 years</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2003</div>
+        <div class="t-title">Concurrent Receipt Breakthrough</div>
+        <ul>
+          <li>Concurrent receipt authorized for members with 50%+ disability ratings</li>
+          <li>Death gratuity doubled, tax-free — from $6K to $12K</li>
+          <li>Year-round TRICARE for unemployed Selected Reservists</li>
+          <li>Extra $1.3 billion won for veterans health care</li>
+          <li>DIC restored for eligible survivors who remarry at 57 or older</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2004</div>
+        <div class="t-title">Ending the "Widows' Tax"</div>
+        <ul>
+          <li>Won phase-out of the SBP age-62 "Widows' Tax"</li>
+          <li>Full concurrent receipt for 20+-year retirees rated 100% disabled</li>
+          <li>BAH raised to cover 100% of median housing cost for each grade and location</li>
+          <li>180 days of TRICARE permanently authorized upon separation</li>
+          <li>FSA and Imminent Danger Pay permanently increased to $250 and $225/month</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2005</div>
+        <div class="t-title">Caring for the Fallen &amp; Wounded</div>
+        <ul>
+          <li>Death gratuity increased to $100,000 for all active-duty deaths</li>
+          <li>Maximum SGLI coverage raised to $400,000, retroactive to 10/7/01</li>
+          <li>Traumatic injury disability insurance rider added to SGLI</li>
+          <li>Hardship duty pay ceiling raised from $300 to $750 per month</li>
+          <li>$1.5 billion added to the FY2005 veterans' health care budget</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2006</div>
+        <div class="t-title">Financial &amp; Health Protections</div>
+        <ul>
+          <li>Won major restrictions on predatory "payday lenders"</li>
+          <li>Free $400K SGLI coverage for members deployed to Afghanistan or Iraq</li>
+          <li>Banned TRICARE fee increases and pharmacy copay hikes for FY2007</li>
+          <li>Pilot programs directed on early diagnosis and treatment of PTSD</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2007</div>
+        <div class="t-title">Wounded Warrior Reforms</div>
+        <ul>
+          <li>DoD &amp; VA required to establish PTSD and TBI treatment and prevention plans</li>
+          <li>Joint DoD/VA electronic health records and seamless transition plan established</li>
+          <li>Minimum SBP annuity raised to 55% of covered retired pay</li>
+          <li>Courts barred from vacating child custody agreements based on deployment</li>
+          <li>Full concurrent receipt for those rated "unemployable"</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2008</div>
+        <div class="t-title">The Post-9/11 GI Bill<span class="t-tag gold">Milestone</span></div>
+        <ul>
+          <li>New Post-9/11 GI Bill: full state college tuition plus housing and book stipends</li>
+          <li>GI Bill transferability to spouses and children secured</li>
+          <li>3.9% basic pay raise — 0.5% above the budget proposal</li>
+          <li>Funds added to hire 2,000 new claims adjudicators to cut the VA backlog</li>
+          <li>10 days of paternity leave authorized for new military fathers</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2009</div>
+        <div class="t-title">Caregivers &amp; VA Funding</div>
+        <ul>
+          <li>Special compensation authorized for wounded warrior caregivers</li>
+          <li>TRICARE coverage won for gray-area Reserve retirees</li>
+          <li>VA funding increase of $25 billion over five years; advance appropriations authority</li>
+          <li>Roth Thrift Savings Plan option won for service members</li>
+          <li>Medical exam required before separating members diagnosed with PTSD/TBI</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ERA III · 2010–2019 ================= -->
+<section>
+  <div class="wrap">
+    <div class="kicker">Era III · Holding the Line</div>
+    <div class="era-head">
+      <h2>Reform &amp; Protection</h2>
+      <span class="era-range">2010 – 2019</span>
+    </div>
+    <p class="section-note">Through sequestration and repeated fee-hike proposals, AFSA blocked benefit cuts, won caregiver and education landmarks, and closed the decade by repealing the Widows Tax.</p>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2010</div>
+        <div class="t-title">Caregivers &amp; Coverage to 26</div>
+        <ul>
+          <li>VA stipend, health/respite care, and support services won for wounded warriors' caregivers</li>
+          <li>TRICARE coverage authorized until age 26 for unmarried children</li>
+          <li>Blocked 25% cut in Medicare &amp; TRICARE payments and a $110/day copay increase</li>
+          <li>Expanded VA health care services for women veterans</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2011</div>
+        <div class="t-title">Fee Caps &amp; Transition Support</div>
+        <ul>
+          <li>TRICARE Prime fee growth capped at the rate of retired-pay growth</li>
+          <li>Chief of the National Guard Bureau established as a member of the Joint Chiefs</li>
+          <li>Vow to Hire Heroes Act — improved transition and training programs</li>
+          <li>Enhanced mental health services and programs for military members</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2012</div>
+        <div class="t-title">Defeating the Cuts</div>
+        <ul>
+          <li>Blocked TRICARE means-testing and new TFL/Standard enrollment fees</li>
+          <li>Defeated proposal for two additional BRAC rounds</li>
+          <li>Won TRICARE pilot for ABA autism therapy for all active &amp; retired families</li>
+          <li>Enhanced suicide prevention programs for service members</li>
+          <li>Won tax credits for employers who hire recent, unemployed, and disabled vets</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2013</div>
+        <div class="t-title">Shutdown Protections &amp; Toxic-Exposure Registries</div>
+        <ul>
+          <li>Pay Our Military Act — full pay and allowances during a government shutdown</li>
+          <li>Health registries established for troops exposed to toxic substances — groundwork for the PACT Act</li>
+          <li>Blocked "Chained-CPI" COLA formula; ensured full-CPI increases</li>
+          <li>Stolen Valor Act — penalties for fraudulent use of military awards</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2014</div>
+        <div class="t-title">Choice Act &amp; COLA Repeal</div>
+        <ul>
+          <li>Repealed the 2013 Bipartisan Budget Act COLA reductions for retirees and survivors</li>
+          <li>Veterans Access, Choice &amp; Accountability Act passed to reduce wait times</li>
+          <li>All 50 states ratified the Interstate Compact on Education for Military Children</li>
+          <li>Blocked a proposed $1 billion commissary funding cut</li>
+          <li>Secured in-state tuition rates for veterans</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2015</div>
+        <div class="t-title">Mental Health &amp; the Backlog</div>
+        <ul>
+          <li>Clay Hunt SAV Act — expanded mental health support for veterans</li>
+          <li>VA disability claims backlog cut 88% for veterans waiting over 125 days</li>
+          <li>Repealed the CPI-minus-1% COLA cut for future retirees</li>
+          <li>Agent Orange benefits opened to USAF C-123 crewmembers</li>
+          <li>Preserved the commissary benefit and restored over $300 million in funding</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2016</div>
+        <div class="t-title">Pay, Parental Leave &amp; Recognition</div>
+        <ul>
+          <li>Won a 2.1% pay raise versus the 1.6% requested by DoD</li>
+          <li>Up to 12 weeks of paid leave authorized for primary caregivers after childbirth</li>
+          <li>All retired reserve-component members recognized as veterans</li>
+          <li>Defeated commissary privatization test and a TFL enrollment fee of up to 2% of retired pay</li>
+          <li>Won urgent-care preauthorization elimination and expanded MTF hours</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2017</div>
+        <div class="t-title">The Forever GI Bill<span class="t-tag gold">Milestone</span></div>
+        <ul>
+          <li>"Forever" GI Bill — lifetime benefit, Purple Heart eligibility, expanded transferability, STEM assistance</li>
+          <li>Won a 2.4% pay raise versus the 2.1% requested</li>
+          <li>Spouse licensure/certification reimbursement up to $500 per PCS</li>
+          <li>Special Survivor Indemnity Allowance permanently extended with COLA increases</li>
+          <li>TRICARE Extra and Standard streamlined into TRICARE Select</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2018</div>
+        <div class="t-title">Caregiver &amp; Access Expansion</div>
+        <ul>
+          <li>VA caregiver support expanded to veterans of all eras</li>
+          <li>Full 2.6% active-duty pay raise; blocked additional BAH reductions</li>
+          <li>Commissary/exchange access extended to Purple Heart recipients, POWs, disabled veterans, and caregivers</li>
+          <li>No new TRICARE fees or copay hikes</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2019</div>
+        <div class="t-title">Widows Tax Repealed<span class="t-tag gold">Milestone</span></div>
+        <ul>
+          <li>Repeal of the Widows Tax — the SBP-DIC offset — secured at last</li>
+          <li>Agent Orange benefits extended to "Blue Water" Navy veterans</li>
+          <li>Basic needs allowance established for low-income regular members</li>
+          <li>3.1% pay raise finalized; sweeping military housing reforms directed</li>
+          <li>Spouse licensure reimbursement doubled from $500 to $1,000</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ERA IV · 2020–2026 ================= -->
+<section class="era-alt">
+  <div class="wrap">
+    <div class="kicker">Era IV · The Modern Fight</div>
+    <div class="era-head">
+      <h2>Historic Wins for a New Generation</h2>
+      <span class="era-range">2020 – 2026</span>
+    </div>
+    <p class="section-note">The current era delivered the PACT Act, record pay raises, and landmark quality-of-life gains — and the fight continues in the FY27 NDAA.</p>
+
+    <div class="timeline">
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2020</div>
+        <div class="t-title">Pandemic-Era Protections</div>
+        <ul>
+          <li>Three conditions added to Agent Orange presumptives — care for 34,000 more veterans</li>
+          <li>Individual Longitudinal Exposure Record expanded, linking exposures to service records</li>
+          <li>DIC retained upon remarriage at age 55</li>
+          <li>Guard members activated for COVID-19 guaranteed pay, benefits, and line-of-duty protections</li>
+          <li>3% uniformed services pay raise; commissary and exchange benefits defended</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
+        <div class="t-year">2021</div>
+        <div class="t-title">Basic Needs &amp; Military Justice Reform</div>
+        <ul>
+          <li>Basic needs allowance established so all service members can meet family needs</li>
+          <li>Sweeping UCMJ changes on preventing and prosecuting sexual assault and harassment</li>
+          <li>Guard/Reserve incentive and special-duty pay parity with active duty</li>
+          <li>PAWS Act — service dogs for veterans with PTSD</li>
+          <li>2.7% pay raise for service members and DoD civilians</li>
+        </ul>
+      </div>
+
+      <div class="t-item reveal">
+        <div class="t-node" aria-hidden="true"></div>
         <div class="t-year">2022</div>
-        <div class="t-title">Honoring Our PACT Act Signed Into Law</div>
+        <div class="t-title">Honoring Our PACT Act Signed Into Law<span class="t-tag gold">Milestone</span></div>
         <ul>
           <li>Toxic exposure care expanded — the largest VA health care and benefits expansion in decades</li>
           <li>New presumptive conditions for burn pit and airborne-hazard exposure</li>
+          <li>Nearly 6 million toxic-exposure screenings and 1.2M+ claims approved to date</li>
         </ul>
       </div>
 
       <div class="t-item reveal">
         <div class="t-node" aria-hidden="true"></div>
         <div class="t-year">2023</div>
-        <div class="t-title">Basic Needs Allowance Takes Effect</div>
+        <div class="t-title">Record Pay &amp; Family Support</div>
         <ul>
-          <li>New allowance to lift junior enlisted families out of food insecurity</li>
-          <li>Sustained advocacy on pay, BAH accuracy, and TRICARE access</li>
+          <li>5.2% pay raise secured — the largest in over two decades</li>
+          <li>Basic Needs Allowance takes effect, lifting junior enlisted families out of food insecurity</li>
+          <li>Cost-sharing waived for the first three outpatient mental health visits each year</li>
+          <li>BAH calculation modified to protect junior enlisted in tight housing markets</li>
+          <li>$70 million increase secured in Impact Aid for military children's schools</li>
         </ul>
       </div>
 
@@ -317,7 +788,9 @@
         <div class="t-title">Historic Pay &amp; Benefits Continuity</div>
         <ul>
           <li>Veterans Benefits Continuity &amp; Accountability supplemental appropriations secured</li>
-          <li>Targeted junior enlisted pay raise won in the FY25 NDAA — the largest in decades</li>
+          <li>Targeted junior enlisted pay raise won in the FY25 NDAA — 14.5% total, the largest in decades</li>
+          <li>Military Spouse Employment Act passed; license portability made permanent via interstate compacts</li>
+          <li>Childcare cost reductions and $255M authorized for new military-children schools</li>
         </ul>
       </div>
 
@@ -327,6 +800,8 @@
         <div class="t-title">Dole Act &amp; Quality-of-Life NDAA Provisions</div>
         <ul>
           <li>Senator Elizabeth Dole Home Care Act signed — expanded caregiver and long-term support</li>
+          <li>Home and community-based services expanded for aging and disabled veterans</li>
+          <li>VET-TEC program permanently authorized and fully funded</li>
           <li>Major family and quality-of-life improvements carried in the NDAA</li>
         </ul>
       </div>
@@ -337,10 +812,98 @@
         <div class="t-title">FY27 NDAA Advocacy Underway</div>
         <ul>
           <li>Pressing conferees on the Major Richard Star Act — concurrent receipt for combat-injured retirees</li>
+          <li>Championing GI Bill transferability reform via the Military Family GI Bill Promise Act and the Post-9/11 GI Bill Transferability Entitlement Act</li>
           <li>BAH reform, TRICARE improvements, and enlisted quality-of-life priorities in both chamber marks</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= CURRENT FIGHT · GI BILL TRANSFERABILITY ================= -->
+<section class="fight">
+  <div class="wrap">
+    <div class="kicker">The Current Fight · 2026</div>
+    <h2>GI Bill Transferability Reform</h2>
+    <div class="fight-status">Active Advocacy — Before Congress Now</div>
+    <p class="section-note">AFSA is fighting for <strong style="color:var(--paper)">GI Bill transferability reform</strong> — fixing the outdated transfer rules that strip service members of the ability to share their earned Post-9/11 GI Bill benefits with the families they serve for. A benefit earned in uniform shouldn't expire at the front gate.</p>
+
+    <div class="pact-grid">
+      <div class="stat-card reveal">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--scarlet)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:1;background:var(--navy-3)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:2;background:var(--scarlet)"></span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-label" style="margin-top:0">The Problem</div>
+          <p class="stat-desc">Under current law, GI Bill benefits can only be transferred while still serving — with a four-year additional service obligation. Members who separate or retire before transferring, or who welcome children later in life, lose the option forever, no matter how many years they served.</p>
+        </div>
+      </div>
+
+      <div class="stat-card reveal" style="transition-delay:.1s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:1;background:var(--gold)"></span>
+          <span style="flex:2;background:var(--afblue)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:2;background:var(--afblue)"></span>
+          <span style="flex:1;background:var(--gold)"></span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-label" style="margin-top:0">The Fix</div>
+          <p class="stat-desc">Let the transfer follow the service: allow earned benefits to move to a spouse or child whenever the family needs it — during service or after — so no one is penalized for separating first or for when their family grows.</p>
+        </div>
+      </div>
+
+      <div class="stat-card reveal" style="transition-delay:.2s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--navy-3)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:2;background:var(--gold)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:2;background:var(--navy-3)"></span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-label" style="margin-top:0">Why It Matters</div>
+          <p class="stat-desc">Transferability was built as a retention tool — but it has become a trap for career members. Enlisted families disproportionately grow later in a career and lose out. Fairness means the benefit follows the service, not the paperwork deadline.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="kicker" style="margin-top:40px">Legislative Avenues</div>
+    <div class="pact-grid avenues-grid">
+      <div class="stat-card reveal">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--afblue)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:1;background:var(--gold)"></span>
+          <span style="flex:1;background:var(--paper)"></span>
+          <span style="flex:2;background:var(--afblue)"></span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-label" style="margin-top:0">Military Family GI Bill Promise Act · H.R. 4540</div>
+          <p class="stat-desc">Bipartisan House bill (Vindman–Mills) allowing eligible members and veterans to transfer earned benefits to a spouse or child at any time — during service or after separation — including dependents added to the family after retirement, and adding a 10-year service pathway to qualify.</p>
+        </div>
+      </div>
+
+      <div class="stat-card reveal" style="transition-delay:.1s">
+        <div class="ribbon" aria-hidden="true">
+          <span style="flex:2;background:var(--gold)"></span>
+          <span style="flex:1;background:var(--navy-3)"></span>
+          <span style="flex:1;background:var(--scarlet)"></span>
+          <span style="flex:1;background:var(--navy-3)"></span>
+          <span style="flex:2;background:var(--gold)"></span>
+        </div>
+        <div class="stat-body">
+          <div class="stat-label" style="margin-top:0">Post-9/11 GI Bill Transferability Entitlement Act</div>
+          <p class="stat-desc">Senate companion effort (Blumenthal) ensuring any member who has completed ten years of service can transfer benefits to dependents at any time — on active duty or as a veteran — including those who separated without transferring or gained a dependent after retirement.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="fight-cta">AFSA is engaging members of Congress, testifying alongside The Military Coalition, and mobilizing its chapters to move transferability reform this session through both avenues — so the benefit follows the service, not the paperwork deadline.</p>
   </div>
 </section>
 
@@ -349,7 +912,7 @@
   <div class="wrap">
     <div class="kicker">The Record</div>
     <h2>Built on 33+ Years of Advocacy</h2>
-    <p class="section-note">The 2022–2026 window continues an unbroken record of documented legislative accomplishments dating to 1992.</p>
+    <p class="section-note">An unbroken record of documented legislative accomplishments dating to 1992 — spanning pay, health care, retirement, survivors, education, and military families.</p>
     <div class="record-grid reveal">
       <div class="record-cell">
         <div class="record-num"><span class="count" data-target="80">0</span><span class="unit">+</span></div>
@@ -369,17 +932,17 @@
 
 <footer>
   <div class="wrap">
-    <p class="quote">“AFSA doesn’t just support those who serve — <em>we fight for them.</em>”</p>
+    <p class="quote">"AFSA doesn't just support those who serve — <em>we fight for them.</em>"</p>
     <div class="ribbon foot-ribbon" aria-hidden="true">
       <span style="flex:2;background:var(--scarlet)"></span>
-      <span style="flex:1;background:var(--cream)"></span>
-      <span style="flex:3;background:var(--navy)"></span>
+      <span style="flex:1;background:var(--paper)"></span>
+      <span style="flex:3;background:var(--afblue)"></span>
       <span style="flex:1;background:var(--gold)"></span>
-      <span style="flex:3;background:var(--navy)"></span>
-      <span style="flex:1;background:var(--cream)"></span>
+      <span style="flex:3;background:var(--afblue)"></span>
+      <span style="flex:1;background:var(--paper)"></span>
       <span style="flex:2;background:var(--scarlet)"></span>
     </div>
-    <p class="foot-note">Counts reflect documented legislative accomplishments from AFSA records (1992–2025). PACT Act figures reflect cumulative impact, 2022–2025. Some actions benefit multiple categories.</p>
+    <p class="foot-note">Counts reflect documented legislative accomplishments from AFSA records (1992–2025). Year entries are condensed highlights; the full record includes additional provisions each year. PACT Act figures reflect cumulative impact, 2022–2025. Some actions benefit multiple categories.</p>
   </div>
 </footer>
 
