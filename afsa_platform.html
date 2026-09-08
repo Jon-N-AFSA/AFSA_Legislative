@@ -64,6 +64,13 @@
     margin:18px 0 8px;color:var(--navy);
   }
   h1 .years{color:var(--scarlet);display:block;font-weight:500;font-size:.55em;letter-spacing:.06em;margin-top:8px}
+  .h1-main{display:flex;align-items:center;gap:.32em;flex-wrap:wrap}
+  .hero-radar{flex:none;width:.82em;height:.82em;border-width:3px}
+  .radar-sub{
+    display:block;font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(15px,1.8vw,19px);letter-spacing:.24em;text-transform:uppercase;
+    color:var(--gold-deep);margin-top:16px;
+  }
   .lede{max-width:600px;color:var(--ink-dim);font-size:17px;margin-top:16px}
   .lede strong{color:var(--navy);font-weight:600}
   .hero-ribbon{margin-top:36px;max-width:520px}
@@ -116,8 +123,7 @@
   .stat-num .unit{font-size:.55em;color:var(--gold-deep);font-weight:500}
   .stat-label{font-size:13px;color:var(--ink-dim);margin-top:7px}
 
-  /* ---------- radar heading ---------- */
-  .radar-head{display:flex;align-items:center;gap:18px;margin-bottom:8px}
+  /* ---------- radar motif ---------- */
   .radar{
     flex:none;width:46px;height:46px;border-radius:50%;
     border:2px solid var(--navy);position:relative;overflow:hidden;background:#FFFDF7;
@@ -204,7 +210,9 @@
     font-size:14px;color:var(--ink-dim);max-width:760px;
   }
   .fight-cta::before{content:"★";color:var(--scarlet);font-size:13px;line-height:1.7}
-  .fight-cta strong{color:var(--navy)}
+  .fight-cta > span{flex:1;min-width:0}
+  .fight-cta strong{color:var(--navy);white-space:nowrap}
+  @media (max-width:560px){ .fight-cta strong{white-space:normal} }
 
   /* GI Bill mini-timeline */
   .gitl{margin:40px 0 44px}
@@ -383,8 +391,10 @@
 <header>
   <div class="wrap">
     <div class="eyebrow">Air Force Sergeants Association</div>
-    <h1>Legislative Platform
+    <h1>
+      <span class="h1-main"><span class="radar hero-radar" aria-hidden="true"></span>Legislative Platform</span>
       <span class="years">2026 – 2027</span>
+      <span class="radar-sub">What's On Our Radar?</span>
     </h1>
     <p class="lede">This platform of legislative objectives is AFSA's <strong>"blueprint" for testimony and advocacy</strong> — seven major focus groups carrying the issues that matter most to our 75,000+ members: Airmen, Guardians, veterans, retirees, survivors, and military families.</p>
     <div class="ribbon hero-ribbon" aria-hidden="true">
@@ -445,11 +455,8 @@
 <!-- ================= FOCUS GROUP 1 · PAY ================= -->
 <section id="pay">
   <div class="wrap">
-    <div class="kicker">Focus Group 1 · What's On Our Radar</div>
-    <div class="radar-head">
-      <div class="radar" aria-hidden="true"></div>
-      <h2 style="margin-bottom:0">Pay, Benefits &amp; Programs</h2>
-    </div>
+    <div class="kicker">Focus Group 1</div>
+    <h2>Pay, Benefits &amp; Programs</h2>
     <p class="goal">Maintain pay comparability and protect non-pay quality-of-life benefits.</p>
     <p class="star-hint">Tap the <b>★</b> next to any priority to add it to your personal talking-points list — then copy it for calls, emails, and chapter meetings.</p>
     <ul class="planks" data-group="Pay, Benefits &amp; Programs">
@@ -636,7 +643,7 @@
       </div>
     </div>
 
-    <p class="fight-cta">AFSA is engaging members of Congress and testifying alongside The Military Coalition to move transferability reform this session. Legislative avenues include the bipartisan <strong>Military Family GI Bill Promise Act (H.R. 4540)</strong>, alongside companion efforts to open transfer eligibility at ten years of service and extend benefits to foster children and legal wards.</p>
+    <p class="fight-cta"><span>AFSA is engaging members of Congress and testifying alongside The Military Coalition to move transferability reform this session. Legislative avenues include the bipartisan <strong>Military Family GI Bill Promise Act (H.R.&nbsp;4540)</strong>, alongside companion efforts to open transfer eligibility at ten years of service and extend benefits to foster children and legal wards.</span></p>
   </div>
 </section>
 
